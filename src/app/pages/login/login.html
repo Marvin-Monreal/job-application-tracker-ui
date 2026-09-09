@@ -1,0 +1,73 @@
+<div class="split-screen">
+
+  <div class="form-panel">
+    <div class="form-panel-inner">
+
+      <div class="login-header">
+        <h1>Job Tracker</h1>
+        <p>Sign in to manage your job applications</p>
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" type="text" placeholder="Enter your username" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Enter your password" />
+        </div>
+
+        <div class="forgot-password">
+          <a routerLink="/forgot-password">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="login-button">Login</button>
+      </form>
+
+      <div class="register-section">
+        <span>Don't have an account?</span>
+        <a routerLink="/register">Create an account</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="visual-panel">
+    <div class="visual-copy">
+      <h2>Every application, one place, one status.</h2>
+      <p>Track where things stand across every role you've applied to, without digging through email threads.</p>
+    </div>
+
+    <div class="pipeline">
+      <div class="pipeline-stage is-done">
+        <span class="pipeline-dot"></span>
+        <div class="pipeline-text">
+          <div class="pipeline-role">Frontend Engineer</div>
+          <div class="pipeline-company">Meridian Labs</div>
+        </div>
+        <span class="pipeline-stage-label">Applied</span>
+      </div>
+
+      <div class="pipeline-stage is-active">
+        <span class="pipeline-dot"></span>
+        <div class="pipeline-text">
+          <div class="pipeline-role">Full-Stack Developer</div>
+          <div class="pipeline-company">Northbridge Co.</div>
+        </div>
+        <span class="pipeline-stage-label">Interviewing</span>
+      </div>
+
+      <div class="pipeline-stage">
+        <span class="pipeline-dot"></span>
+        <div class="pipeline-text">
+          <div class="pipeline-role">Software Engineer II</div>
+          <div class="pipeline-company">Alderly Systems</div>
+        </div>
+        <span class="pipeline-stage-label">Offer</span>
+      </div>
+    </div>
+  </div>
+
+</div>
