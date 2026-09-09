@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-bg: #f3f6f4;
+  --color-surface: #ffffff;
+  --color-primary: #1f3b33;
+  --color-primary-deep: #16281f;
+  --color-accent: #3b6e5e;
+  --color-accent-hover: #2c5548;
+  --color-accent-soft: rgba(59, 110, 94, 0.1);
+  --color-highlight: #c98a4b;
+  --color-highlight-soft: rgba(201, 138, 75, 0.16);
+  --color-text: #1e2a26;
+  --color-text-muted: #6e7c77;
+  --color-border: #dce3df;
+
+  --font-display: "Source Serif 4", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-control: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+.split-screen {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

@@ -1,0 +1,271 @@
+/* ==========================================================================
+   Left — form panel
+   ========================================================================== */
+
+.form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  padding: 24px;
+}
+
+.form-panel-inner {
+  width: 100%;
+  max-width: 340px;
+}
+
+.login-header {
+  margin-bottom: 28px;
+}
+
+.login-header h1 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.login-header p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.form-group input {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  padding: 11px 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-group input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: -6px;
+}
+
+.forgot-password a {
+  font-size: 13px;
+  color: var(--color-highlight);
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.login-button {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-control);
+  padding: 12px 16px;
+  margin-top: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.login-button:hover {
+  background: var(--color-accent-hover);
+}
+
+.register-section {
+  text-align: center;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.register-section a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.register-section a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ==========================================================================
+   Right — illustrated panel
+   ========================================================================== */
+
+.visual-panel {
+  position: relative;
+  background: var(--color-primary);
+  background-image: radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 56px;
+  overflow: hidden;
+}
+
+.visual-copy {
+  max-width: 380px;
+  margin-bottom: 48px;
+}
+
+.visual-copy h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 10px;
+}
+
+.visual-copy p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* pipeline stack */
+.pipeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 340px;
+}
+
+.pipeline-stage {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.pipeline-stage.is-active {
+  background: var(--color-highlight-soft);
+  border-color: rgba(201, 138, 75, 0.4);
+}
+
+.pipeline-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.pipeline-stage.is-active .pipeline-dot {
+  background: var(--color-highlight);
+}
+
+.pipeline-stage.is-done .pipeline-dot {
+  background: #7fae9c;
+}
+
+.pipeline-text {
+  flex: 1;
+}
+
+.pipeline-role {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.pipeline-company {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.pipeline-stage-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pipeline-stage.is-active .pipeline-stage-label {
+  color: var(--color-highlight);
+  font-weight: 500;
+}
+
+/* connecting line behind the dots */
+.pipeline {
+  position: relative;
+}
+
+.pipeline::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 24px;
+  bottom: 24px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: 0;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .split-screen {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-panel {
+    display: none;
+  }
+
+  .form-panel {
+    padding: 40px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-group input,
+  .login-button {
+    transition: none;
+  }
+}
