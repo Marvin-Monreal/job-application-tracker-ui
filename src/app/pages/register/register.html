@@ -1,0 +1,89 @@
+  <div class="split-screen">
+    <!-- Left: form panel -->
+    <section class="form-panel">
+      <div class="form-panel-inner">
+        <header class="register-header">
+          <h1>Create your account</h1>
+          <p>Track every application from first submit to signed offer.</p>
+        </header>
+
+        <!-- Server error, render only when needed:
+        <div class="form-alert" role="alert">
+          An account with this email already exists. Try signing in instead.
+        </div>
+        -->
+
+        <form novalidate>
+          <div class="form-group">
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Jordan Rivera" required />
+            <!-- <p class="form-error" id="fullName-error">Enter your full name.</p> -->
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            <!-- <p class="form-error" id="email-error">Enter a valid email address.</p> -->
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="new-password" aria-describedby="password-hint" required />
+            <p class="form-hint" id="password-hint">Use at least 8 characters.</p>
+            <!-- <p class="form-error" id="password-error">Password must be at least 8 characters.</p> -->
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm password</label>
+            <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required />
+            <!-- <p class="form-error" id="confirmPassword-error">Passwords don't match.</p> -->
+          </div>
+
+          <button class="register-button" type="submit">Create account</button>
+        </form>
+
+        <div class="login-section">
+          Already have an account?
+          <a routerLink="/login">Sign in</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right: illustrated panel (decorative) -->
+    <aside class="visual-panel" aria-hidden="true">
+      <div class="visual-copy">
+        <h2>See every application move forward.</h2>
+        <p>Keep your search organized from the first submit to the final offer.</p>
+      </div>
+
+      <!-- Same pipeline as the login page -->
+      <div class="pipeline">
+        <div class="pipeline-stage is-done">
+          <span class="pipeline-dot"></span>
+          <div class="pipeline-text">
+            <div class="pipeline-role">Frontend Engineer</div>
+            <div class="pipeline-company">Meridian Labs</div>
+          </div>
+          <span class="pipeline-stage-label">Applied</span>
+        </div>
+
+        <div class="pipeline-stage is-active">
+          <span class="pipeline-dot"></span>
+          <div class="pipeline-text">
+            <div class="pipeline-role">Full-Stack Developer</div>
+            <div class="pipeline-company">Northbridge Co.</div>
+          </div>
+          <span class="pipeline-stage-label">Interviewing</span>
+        </div>
+
+        <div class="pipeline-stage">
+          <span class="pipeline-dot"></span>
+          <div class="pipeline-text">
+            <div class="pipeline-role">Software Engineer II</div>
+            <div class="pipeline-company">Alderly Systems</div>
+          </div>
+          <span class="pipeline-stage-label">Offer</span>
+        </div>
+      </div>
+    </aside>
+  </div>

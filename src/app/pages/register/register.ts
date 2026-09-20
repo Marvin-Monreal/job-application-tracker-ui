@@ -3,8 +3,8 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   imports: [RouterLink],
-  selector: 'app-login',
-  styleUrl: './login.css',
-  templateUrl: './login.html',
+  selector: 'app-register',
+  styleUrl: './register.css',
+  templateUrl: './register.html',
 })
-export class Login {}
+export class Register {}
