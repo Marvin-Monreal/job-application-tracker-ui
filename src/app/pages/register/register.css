@@ -1,0 +1,307 @@
+/* ==========================================================================
+   Register page
+   Shared rules below are identical to the login page so the two match.
+   Register-only additions are marked "Register only".
+   Relies on global tokens and .split-screen from styles.scss.
+   ========================================================================== */
+
+/* ==========================================================================
+   Left — form panel
+   ========================================================================== */
+
+.form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  padding: 24px;
+}
+
+.form-panel-inner {
+  width: 100%;
+  max-width: 340px;
+}
+
+.register-header {
+  margin-bottom: 28px;
+}
+
+.register-header h1 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.register-header p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.form-group input {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  padding: 11px 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-group input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+/* Register only: hint, error and invalid states */
+.form-hint {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.form-error {
+  font-size: 12.5px;
+  color: var(--color-error, #b3402f);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Angular: [class.is-invalid]="control.invalid && control.touched",
+   or rely on the ng-* classes below. */
+.form-group input.is-invalid,
+.form-group input.ng-invalid.ng-touched {
+  border-color: var(--color-error, #b3402f);
+}
+
+.form-group input.is-invalid:focus,
+.form-group input.ng-invalid.ng-touched:focus {
+  box-shadow: 0 0 0 3px rgba(179, 64, 47, 0.15);
+}
+
+/* Register only: server error banner (e.g. email already registered) */
+.form-alert {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-error, #b3402f);
+  background: rgba(179, 64, 47, 0.08);
+  border: 1px solid rgba(179, 64, 47, 0.3);
+  border-radius: var(--radius-control);
+  padding: 10px 14px;
+  margin-bottom: 18px;
+}
+
+.register-button {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-control);
+  padding: 12px 16px;
+  margin-top: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.register-button:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+}
+
+.register-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mirrors the login page's .register-section */
+.login-section {
+  text-align: center;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.login-section a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.login-section a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ==========================================================================
+   Right — illustrated panel
+   ========================================================================== */
+
+.visual-panel {
+  position: relative;
+  background: var(--color-primary);
+  background-image: radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 56px;
+  overflow: hidden;
+}
+
+.visual-copy {
+  max-width: 380px;
+  margin-bottom: 48px;
+}
+
+.visual-copy h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 10px;
+}
+
+.visual-copy p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* pipeline stack */
+.pipeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 340px;
+}
+
+.pipeline-stage {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.pipeline-stage.is-active {
+  background: var(--color-highlight-soft);
+  border-color: rgba(201, 138, 75, 0.4);
+}
+
+.pipeline-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.pipeline-stage.is-active .pipeline-dot {
+  background: var(--color-highlight);
+}
+
+.pipeline-stage.is-done .pipeline-dot {
+  background: #7fae9c;
+}
+
+.pipeline-text {
+  flex: 1;
+}
+
+.pipeline-role {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.pipeline-company {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.pipeline-stage-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pipeline-stage.is-active .pipeline-stage-label {
+  color: var(--color-highlight);
+  font-weight: 500;
+}
+
+/* connecting line behind the dots */
+.pipeline {
+  position: relative;
+}
+
+.pipeline::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 24px;
+  bottom: 24px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: 0;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .split-screen {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-panel {
+    display: none;
+  }
+
+  .form-panel {
+    padding: 40px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-group input,
+  .register-button {
+    transition: none;
+  }
+}
