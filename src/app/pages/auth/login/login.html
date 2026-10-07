@@ -1,0 +1,45 @@
+<main class="split-screen">
+  <!-- Left: form panel -->
+  <section class="form-panel">
+    <div class="form-panel-inner">
+
+      <div class="login-header">
+        <h1>Job Tracker</h1>
+        <p>Sign in to manage your job applications</p>
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" type="text" placeholder="Enter your username" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Enter your password" />
+        </div>
+
+        <div class="forgot-password">
+          <a routerLink="/forgot-password">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="login-button">Login</button>
+      </form>
+
+      <div class="register-section">
+        <span>Don't have an account?</span>
+        <a routerLink="/register">Create an account</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Right: illustrated panel (decorative) -->
+  <aside class="visual-panel" aria-hidden="true">
+    <app-auth-showcase
+      heading="Every application, one place, one status."
+      text="Track where things stand across every role you've applied to, without digging through email threads."
+    />
+  </aside>
+
+</main>
